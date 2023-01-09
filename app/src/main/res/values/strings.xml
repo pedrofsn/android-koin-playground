@@ -2,4 +2,5 @@
     <string name="app_name">KoinScopedActivity</string>
     <string name="description">Call same activities twice!</string>
     <string name="button">Click here</string>
+    <string name="refresh_content">Refresh content</string>
 </resources>

@@ -19,7 +19,7 @@ class TrickyActivity : ScopeActivity(), MVP.View {
         binding = ActivityTrickyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        presenter.initialize()
+        binding.button.setOnClickListener { presenter.initialize() }
     }
 
     override fun showContent(message: String) {
