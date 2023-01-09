@@ -20,4 +20,4 @@ Applicability: when you`re working with SDK or feature modularized outside of mo
 With this sample you can reproduce this scenario.
 
 ## Sample in video
-
+https://user-images.githubusercontent.com/3484814/211393320-90e97a05-226c-4708-8e45-02ef20914d21.mov
