@@ -18,10 +18,10 @@ class TrickyActivity : ScopeActivity(), MVP.View {
         binding = ActivityTrickyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        presenter.toast()
+        presenter.initialize()
     }
 
-    override fun toast() {
+    override fun showContent() {
         val id = intent.getIntExtra("id", -1)
         val text = "TrickyActivity#${id}\n${Calendar.getInstance()}"
         binding.textView.text = text

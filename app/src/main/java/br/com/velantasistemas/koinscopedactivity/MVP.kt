@@ -3,10 +3,10 @@ package br.com.velantasistemas.koinscopedactivity
 interface MVP {
 
     interface View {
-        fun toast()
+        fun showContent()
     }
 
     interface Presenter {
-        fun toast()
+        fun initialize()
     }
 }
