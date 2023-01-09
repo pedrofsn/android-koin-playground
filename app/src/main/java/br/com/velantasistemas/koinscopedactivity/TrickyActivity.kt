@@ -21,11 +21,6 @@ class TrickyActivity : ScopeActivity(), MVP.View {
         binding.button.setOnClickListener { loadContent() }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        unloadKoinModules(Modules.instance)
-    }
-
     override fun loadContent() {
         val presenter = scope.get<MVP.Presenter> {
             val id = intent.getIntExtra("id", -1)
@@ -36,5 +31,10 @@ class TrickyActivity : ScopeActivity(), MVP.View {
 
     override fun showContent(message: String) {
         binding.textView.text = message
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unloadKoinModules(Modules.instance)
     }
 }
