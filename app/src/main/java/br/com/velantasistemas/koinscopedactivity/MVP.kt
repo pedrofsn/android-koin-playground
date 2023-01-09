@@ -3,7 +3,7 @@ package br.com.velantasistemas.koinscopedactivity
 interface MVP {
 
     interface View {
-        fun showContent()
+        fun showContent(message: String)
     }
 
     interface Presenter {
