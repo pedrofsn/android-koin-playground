@@ -1,5 +1,6 @@
 package br.com.velantasistemas.koinscopedactivity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.velantasistemas.koinscopedactivity.databinding.ActivityMainBinding
@@ -16,8 +17,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            startActivity(Intent(this, TrickyActivity::class.java).apply {
+                putExtra("id", 2023)
+            })
         }
     }
 }
