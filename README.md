@@ -1,5 +1,8 @@
 # android-sample-KoinScopedActivity
 
+## Library
+- https://github.com/InsertKoinIO/koin
+
 ## Problem description (high level)
 1. An activity class to see users profile, like ActivityProfile;
 2. ActivityProfile has a module tied to it and this activity load and unload this module;
