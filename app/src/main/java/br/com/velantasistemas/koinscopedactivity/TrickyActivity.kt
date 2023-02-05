@@ -11,16 +11,22 @@ class TrickyActivity : ScopeActivity(), MVP.View {
 
     private lateinit var binding: ActivityTrickyBinding
 
-    private lateinit var presenter: MVP.Presenter
+    private val presenter by lazy {
+        scope.get<MVP.Presenter> {
+            val id = intent.getIntExtra("id", -1)
+            parametersOf(this@TrickyActivity, id)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         loadKoinModules(Modules.instance)
         super.onCreate(savedInstanceState)
 
-        presenter = scope.get<MVP.Presenter> {
-            val id = intent.getIntExtra("id", -1)
-            parametersOf(this@TrickyActivity, id)
-        }
+        /**
+         * What the hell is that?
+         * It's just to trigger kotlin lazy initialization once.
+         * **/
+        presenter.toString()
 
         binding = ActivityTrickyBinding.inflate(layoutInflater)
         setContentView(binding.root)
