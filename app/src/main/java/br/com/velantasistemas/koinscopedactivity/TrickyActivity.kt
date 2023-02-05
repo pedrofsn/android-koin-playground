@@ -11,9 +11,16 @@ class TrickyActivity : ScopeActivity(), MVP.View {
 
     private lateinit var binding: ActivityTrickyBinding
 
+    private lateinit var presenter: MVP.Presenter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         loadKoinModules(Modules.instance)
         super.onCreate(savedInstanceState)
+
+        presenter = scope.get<MVP.Presenter> {
+            val id = intent.getIntExtra("id", -1)
+            parametersOf(this@TrickyActivity, id)
+        }
 
         binding = ActivityTrickyBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -22,10 +29,6 @@ class TrickyActivity : ScopeActivity(), MVP.View {
     }
 
     override fun loadContent() {
-        val presenter = scope.get<MVP.Presenter> {
-            val id = intent.getIntExtra("id", -1)
-            parametersOf(this@TrickyActivity, id)
-        }
         presenter.initialize()
     }
 
